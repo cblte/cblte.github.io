@@ -8,14 +8,14 @@
 &lt;/ul>
 &lt;p>Um das Tool jetzt einzusetzen, benötigst du noch zwei Schlüssel. Diese generiert man sich in &lt;strong>Settings&lt;/strong> unter dem Menüpunkt **Integrations. **&lt;/p>
 &lt;figure>
-&lt;img src="https://cblte.github.io/images/2020-11-ghost-integrations.jpg" alt="Ghost Integration"/> &lt;/figure>
+&lt;img src="https://cblte.github.io/2020/11/unbenutzte-bilder-in-einem-ghost-blog-l%C3%B6schen/ghost-integrations.jpg" alt="Ghost Integration"/> &lt;/figure>
 &lt;p>Ich habe das hier für mcih schon erstellt, du musst in deinem Blog auf &lt;strong>Add custom integration&lt;/strong> klicken. Dann einen Namen vergeben und mit Save speichern.&lt;/p>
 &lt;p>Das sollte dann so aussehen:&lt;/p>
 &lt;figure>
-&lt;img src="https://cblte.github.io/images/2020-11-ghost-integrations-details.jpg" alt="Ghost Integration"/> &lt;/figure>
+&lt;img src="https://cblte.github.io/2020/11/unbenutzte-bilder-in-einem-ghost-blog-l%C3%B6schen/ghost-integrations-details.jpg" alt="Ghost Integration"/> &lt;/figure>
 &lt;p>In der Kommandozeile wechselst du dann in das Verzeichnis von deiner Ghost Installation und führst den Befehl &lt;code>ghost-purge-images display --content-key=1234567890 --admin-key=0987654321s&lt;/code> aus. Die Zahlen musst du natürlich durch deine Schlüssel aus der oben erstellen &lt;strong>Integration&lt;/strong> nehmen.&lt;/p>
 &lt;figure>
-&lt;img src="https://cblte.github.io/images/2020-11-ghost-purge-terminal-display.jpg" alt="Ghost Purge Terminal Output"/> &lt;/figure>
+&lt;img src="https://cblte.github.io/2020/11/unbenutzte-bilder-in-einem-ghost-blog-l%C3%B6schen/ghost-purge-terminal-display.jpg" alt="Ghost Purge Terminal Output"/> &lt;/figure>
 &lt;p>&lt;strong>ghost-purge-images&lt;/strong> mit Parameter &lt;strong>display&lt;/strong> zeigt die möglichen Kandidaten
 Den gleichen Befehl kannst du dann noch mal mit dem Parameter &lt;strong>purge&lt;/strong> ausführen, um die Bilder auch wirklich zu löschen.&lt;/p></description></item><item><title>PrivacyTools.io</title><link>https://cblte.github.io/2020/08/privacytools.io/</link><pubDate>Tue, 04 Aug 2020 16:31:00 +0000</pubDate><guid>https://cblte.github.io/2020/08/privacytools.io/</guid><description>You are being watched. Private and state-sponsored organizations are monitoring and recording your online activities. PrivacyTools provides services, tools and knowledge to protect your privacy against global mass surveillance.
 PrivacyTools.io ist eine tolle Webseite für gute und kostenfreie Tools zum Thema Sicherheit, Privacy und Verschlüsselung.
