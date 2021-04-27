@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sammelsurium on ZN80.NET</title><link>https://cblte.github.io/sammelsurium/</link><description>Recent content in Sammelsurium on ZN80.NET</description><generator>Hugo -- gohugo.io</generator><language>de</language><copyright>Copyright © 2021, Carsten Brueggenolte.</copyright><atom:link href="https://cblte.github.io/sammelsurium/index.xml" rel="self" type="application/rss+xml"/><item><title>Awesome Lists</title><link>https://cblte.github.io/sammelsurium/awesome-lists/</link><pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate><guid>https://cblte.github.io/sammelsurium/awesome-lists/</guid><description> Awesome list of Golang stuff
-https://awesome-go.com/ Security-List
+https://awesome-go.com/ Awesome list of Remote Jobs
+https://github.com/lukasz-madon/awesome-remote-job Awesome list of Python
+https://github.com/vinta/awesome-python
+https://awesome-python.com/ Security-List
 https://security-list.js.org/#/ The List of Awesome Lists
 https://github.com/sindresorhus/awesome A collection of interesting new networks and tech aiming at decentralisation (in some form)
 redecentralize/alternative-internet</description></item><item><title>Comments For Static Sites</title><link>https://cblte.github.io/sammelsurium/comments-for-static-sites/</link><pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate><guid>https://cblte.github.io/sammelsurium/comments-for-static-sites/</guid><description>A list of software and services to allow comments on static websites.
