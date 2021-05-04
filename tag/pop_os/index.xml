@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>POP!_OS on ZN80.NET</title><link>https://cblte.github.io/tag/pop_os/</link><description>Recent content in POP!_OS on ZN80.NET</description><generator>Hugo -- gohugo.io</generator><language>de</language><copyright>Copyright © 2021, Carsten Brueggenolte.</copyright><lastBuildDate>Tue, 04 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cblte.github.io/tag/pop_os/index.xml" rel="self" type="application/rss+xml"/><item><title>Hallo, Pop!_OS</title><link>https://cblte.github.io/2021/05/hallo-pop-os/</link><pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate><guid>https://cblte.github.io/2021/05/hallo-pop-os/</guid><description>&lt;figure>
+&lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/hallo_pop_os.png" alt="Hallo, Pop!_OS"/> &lt;figcaption>
+&lt;p>
+Hallo, Pop!_OS
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Heute habe ich POP!_OS auf dem Rechner installiert. Was ich nach der einfachen Installation noch alles gemacht habe, habe ich hier mal aufgeschrieben.&lt;/p>
+&lt;h2 id="pop_os-installation">Pop!_OS Installation&lt;/h2>
+&lt;p>&lt;a href="https://pop.system76.com/">Pop!_OS&lt;/a> ist ein modernes Linux Betriebssystem für MINT (STEM) und Kreative. Unter der Haube Ubuntu, oben drauf moderne und sichere Open-Source-Software.&lt;/p>
+&lt;p>Pop!_OS gibt es aktuell in der Version 20.10 und 20.04 LTS (Long Term Support). Außerdem gibt es speziell für Computer mit NVIDIA Grafiken von jeder Version ein Image,bei dem die NVIDIA Grafikkartentriber schon vorinstalliert sind.&lt;/p>
+&lt;p>Nach dem Herunterladen der Image-Datei benötigen wir noch [balenaEtcher)(https://www.balena.io/etcher/) oder &lt;a href="https://unetbootin.github.io/">UNetbootin&lt;/a> um aus dem Image einen bootfähigen USB-Stick zu erstellen.&lt;/p>
+&lt;p>Jetzt den Rechner neustarten, vom USB-Stick booten und dem Installationsassistenten folgen.&lt;/p>
+&lt;h2 id="einrichtung-nach-dem-ersten-start">Einrichtung nach dem ersten Start&lt;/h2>
+&lt;p>Nach dem ersten Start werden noch Angaben abgefragt und der Benutzer angelegt. Wenn man dann auf dem Desktop ist, öffne eine Konsole um ein paar wichtige Aufgaben zu erledigen.&lt;/p>
+&lt;h3 id="1-system-aktualisieren">1. System aktualisieren.&lt;/h3>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-apt-get-update.png" alt="Terminal Screenshot apt-get update"/> &lt;figcaption>
+&lt;p>
+Mein System ist schon auf dem neusten Stand
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Durch eingabe der folgenden Befehle werden die Paketequellen, die installierten Programme und das System selbst auf den aktuellen Stand gebracht.&lt;/p>
+&lt;pre>&lt;code>sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+&lt;/code>&lt;/pre>
+&lt;p>Die drei Befehle kann man auch mithilfe von &lt;code>&amp;amp;&amp;amp;&lt;/code> aneinander ketten.&lt;/p>
+&lt;pre>&lt;code>sudo apt-get update -y &amp;amp;&amp;amp; sudo apt-get upgrade -y &amp;amp;&amp;amp; sudo apt-get dist-upgrade -y
+&lt;/code>&lt;/pre>
+&lt;h3 id="2-installiere-die-gnome-tweaks">2. Installiere die GNOME Tweaks&lt;/h3>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-gnome-tweaks.png" alt="Screenshot GNOME Tweaks"/> &lt;figcaption>
+&lt;p>
+Screenshot GNOME Tweaks
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Mithilfe der GNOME Tweaks lassen sich in Pop!_OS die &amp;ldquo;Minimize&amp;rdquo; und &amp;ldquo;Maximize&amp;rdquo; Buttons für die Fenster aktivieren. Das ist besonders dann hilfreich, wenn man nicht im Fullscreen-Modus arbeitet oder den &amp;ldquo;Tile-Windows&amp;rdquo;-Mode aktiviert hat.&lt;/p>
+&lt;pre>&lt;code>sudo apt install gnome-tweaks
+&lt;/code>&lt;/pre>
+&lt;p>Alternativ findet man die GNOME Tweaks auch im Pop!_Shop.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-gnome-tweaks-shop.png" alt="Screenshot GNOME Tweaks im Shop"/> &lt;figcaption>
+&lt;p>
+Screenshot GNOME Tweaks im Shop
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="3-dash-to-dock">3. Dash To Dock&lt;/h3>
+&lt;p>Wenn du das Dock dauerhaft sichtbar haben möchtest, dann kannst du dir die GNOME Extension &lt;a href="https://extensions.gnome.org/extension/307/dash-to-dock/">Dash to Dock&lt;/a> installieren. Diese holt das Dock aus der Übersicht (SuperKey/Windows Taste drücken) in den Vordergrund. Außerdem kann man das Aussehen und Verhalten anpassen.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-browser-dash-to-dock.png" alt="Screenshot Dash To Dock"/> &lt;figcaption>
+&lt;p>
+Screenshot Dash To Dock
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Der empfohlene Weg für GNOME Extensions ist über den Browser. Dazu musst du aber erst noch ein Plugin für Firefox installieren, die GNOME Shell Extensions. Nach Installation die Webseite neu laden und den Schalter auf ON stellen. Es sollte nun eine Abfrage kommen, ob du die Extension installieren willst.&lt;/p>
+&lt;h3 id="4-programme-aus-dem-pop_shop-installieren">4. Programme aus dem Pop!_Shop installieren&lt;/h3>
+&lt;p>Pop!_OS kommt mit einer Basis-Austattung an Programmen. Was durchaus beabsichtigt ist, da man dem Nutzer eine saubere und klare Vorlage geben möchten. Wer mehr möchte, kann sich in Ruhe durch den Shop klicken.&lt;/p>
+&lt;p>Der Shop ist übersichtlich und klar strukturiert. Kein wunder, hat sich System76 doch bei &lt;a href="https://elementary.io/de/">ElementaryOS&lt;/a> bedient. In den Pop!_Picks findest du eine Auswahl an beliebten Programmen wie Steam, Signal, Spotify, Visual Studio Code&lt;/p>
+&lt;h3 id="5-installieren-von-closed-source-media-codecs-optional">5. Installieren von Closed-Source Media Codecs (Optional)&lt;/h3>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-pop-shop.png" alt="Screenshot Pop!_Shop"/> &lt;figcaption>
+&lt;p>
+Screenshot Pop1!_Shop
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Pop!_OS kommt mit vielen Open-Source-Media-Formaten daher, aber manchmal kommt es vor, dass man ein Video abspielen möchte, für das man dann keinen Code hat. Hier hilft das Paket &lt;code>ubuntu-restricted-extras&lt;/code> weiter. Installiert wird es so:&lt;/p>
+&lt;pre>&lt;code>sudo apt-get install ubuntu-restricted-extras
+&lt;/code>&lt;/pre>
+&lt;p>Wärend die Installation läuft, wirst du aufgefordert die ein oder anderen Lizenz zu akzeptieren. Sehr wahrscheinlich wird hier etwas von Microsoft angezeigt werden.&lt;/p>
+&lt;h3 id="6-software-die-ich-installiert-habe">6. Software die ich installiert habe&lt;/h3>
+&lt;p>Über die Kommandozeile habe ich folgende Software installiert:&lt;/p>
+&lt;ul>
+&lt;li>Youtube und Video downloader: &amp;lsquo;youtube-dl&amp;rsquo;&lt;/li>
+&lt;li>Video Lan Client: vlc&lt;/li>
+&lt;li>neofetch, htop, iftop&lt;/li>
+&lt;li>Brave-Browser via &lt;a href="https://brave.com/linux/#linux">https://brave.com/linux/#linux&lt;/a>&lt;/li>
+&lt;li>VSCodium via &lt;a href="https://vscodium.com/">https://vscodium.com/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Und aus dem Shop habe ich mir geladen:&lt;/p>
+&lt;ul>
+&lt;li>Signal via flathub&lt;/li>
+&lt;li>Steam via flathub&lt;/li>
+&lt;li>Element via flathub&lt;/li>
+&lt;/ul>
+&lt;h2 id="fazit">Fazit&lt;/h2>
+&lt;p>Bisher muss ich sagen, bin ich super zufrieden. Das System ist schnell, die Festplattte ist verschlüsselt, die Softwarepakete funktionieren und ich kann mich bisher nicht beklagen.&lt;/p>
+&lt;p>Als nächstes muss ich noch meinen Passwortmanager installieren und meine E-Mail-Konten einrichten. Ob ich Thunderbird nochmal eine Change gebe? Ich weiß nicht. Geary scheint als E-Mail-Programm eigentlich völlig ausreichend zu sein. Falls doch mal etwas verschlüsseltes eintreffen sollte, kann ich das immer noch in der Konsole oder im Texteditor entschlüsseln.&lt;/p>
+&lt;p>Ich bin zufrieden! Und du, verwendest du schon Linux oder willst es mal versuchen?&lt;/p></description></item></channel></rss>
