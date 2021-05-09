@@ -41,7 +41,7 @@ Hallo, Pop!_OS
 &lt;p>Jetzt den Rechner neustarten, vom USB-Stick booten und dem Installationsassistenten folgen.&lt;/p>
 &lt;h2 id="einrichtung-nach-dem-ersten-start">Einrichtung nach dem ersten Start&lt;/h2>
 &lt;p>Nach dem ersten Start werden noch Angaben abgefragt und der Benutzer angelegt. Wenn man dann auf dem Desktop ist, öffne eine Konsole um ein paar wichtige Aufgaben zu erledigen.&lt;/p>
-&lt;h3 id="1-system-aktualisieren">1. System aktualisieren.&lt;/h3>
+&lt;h3 id="1-system-aktualisieren">1. System aktualisieren&lt;/h3>
 &lt;figure>
 &lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-apt-get-update.png" alt="Terminal Screenshot apt-get update"/> &lt;figcaption>
 &lt;p>
@@ -84,7 +84,7 @@ Screenshot Dash To Dock
 &lt;p>Der empfohlene Weg für GNOME Extensions ist über den Browser. Dazu musst du aber erst noch ein Plugin für Firefox installieren, die GNOME Shell Extensions. Nach Installation die Webseite neu laden und den Schalter auf ON stellen. Es sollte nun eine Abfrage kommen, ob du die Extension installieren willst.&lt;/p>
 &lt;h3 id="4-programme-aus-dem-pop_shop-installieren">4. Programme aus dem Pop!_Shop installieren&lt;/h3>
 &lt;p>Pop!_OS kommt mit einer Basis-Austattung an Programmen. Was durchaus beabsichtigt ist, da man dem Nutzer eine saubere und klare Vorlage geben möchten. Wer mehr möchte, kann sich in Ruhe durch den Shop klicken.&lt;/p>
-&lt;p>Der Shop ist übersichtlich und klar strukturiert. Kein wunder, hat sich System76 doch bei &lt;a href="https://elementary.io/de/">ElementaryOS&lt;/a> bedient. In den Pop!_Picks findest du eine Auswahl an beliebten Programmen wie Steam, Signal, Spotify, Visual Studio Code&lt;/p>
+&lt;p>Der Shop ist übersichtlich und klar strukturiert. Kein wunder, hat sich System76 doch bei &lt;a href="https://elementary.io/de/">ElementaryOS&lt;/a> bedient. In den Pop!_Picks findest du eine Auswahl an beliebten Programmen wie Steam, Signal, Spotify, Visual Studio Code.&lt;/p>
 &lt;h3 id="5-installieren-von-closed-source-media-codecs-optional">5. Installieren von Closed-Source Media Codecs (Optional)&lt;/h3>
 &lt;figure>
 &lt;img src="https://cblte.github.io/2021/05/hallo-pop-os/images/screenshot-pop-shop.png" alt="Screenshot Pop!_Shop"/> &lt;figcaption>
