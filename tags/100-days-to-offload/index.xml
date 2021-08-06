@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>100 Days To Offload on ZN80.NET</title><link>https://cblte.github.io/tags/100-days-to-offload/</link><description>Recent content in 100 Days To Offload on ZN80.NET</description><generator>Hugo -- gohugo.io</generator><language>de</language><copyright>Copyright © 2021, Carsten Brueggenolte.</copyright><lastBuildDate>Sun, 01 Aug 2021 14:09:03 +0200</lastBuildDate><atom:link href="https://cblte.github.io/tags/100-days-to-offload/index.xml" rel="self" type="application/rss+xml"/><item><title>Was Bisher Geschah – Woche 21-30</title><link>https://cblte.github.io/2021/08/was-bisher-geschah-woche-21-30/</link><pubDate>Sun, 01 Aug 2021 14:09:03 +0200</pubDate><guid>https://cblte.github.io/2021/08/was-bisher-geschah-woche-21-30/</guid><description>&lt;figure>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>100 Days To Offload on ZN80.NET</title><link>https://cblte.github.io/tags/100-days-to-offload/</link><description>Recent content in 100 Days To Offload on ZN80.NET</description><generator>Hugo -- gohugo.io</generator><language>de</language><copyright>Copyright © 2021, Carsten Brueggenolte.</copyright><lastBuildDate>Fri, 06 Aug 2021 15:31:42 +0200</lastBuildDate><atom:link href="https://cblte.github.io/tags/100-days-to-offload/index.xml" rel="self" type="application/rss+xml"/><item><title>MkDocs mit Docker</title><link>https://cblte.github.io/2021/08/mkdocs-mit-docker/</link><pubDate>Fri, 06 Aug 2021 15:31:42 +0200</pubDate><guid>https://cblte.github.io/2021/08/mkdocs-mit-docker/</guid><description>&lt;p>Die letzten Tage habe ich mit dem Sven an der Matrix-Dokumentation für den Tildeverse-Server envs.net gearbeitet. Nachdem wir erfolglos versucht haben, den Fork der TU-Dresden zu bearbeiten, haben wir uns dau entschlossen, die Dokumentation anstatt mit Hugo doch lieber mit MkDocs umzusetzen. Hinzu kommt, dass MkDocs von Haus aus eine Suchfunktion mitliefert und das nicht extra eingebunden werden muss.&lt;/p>
+&lt;p>MkDocs konnte ich lokal mit brew installieren, doch nachdem es ein neues Theme und damit weitere Extensions für MkDocs geben sollte, habe ich mir gedacht: &amp;ldquo;warum soll ich mir mein System mit irgendwelchen Sachen zu müllen, wenn ich dafür doch lieber einen Docker-Container verwenden kann&amp;rdquo;.&lt;/p>
+&lt;p>Den lokalen Rechner sauber halten ist keine so schlechte Idee und da MkDocs in Python geschrieben ist, lässt sich das sehr gut in einem Docker-Image verpacken. Das macht es auch für andere Entwickler einfacher, es auf ihrem lokalen Rechner auszuführen.&lt;/p>
+&lt;h2 id="docker-image-erstellen">Docker Image erstellen&lt;/h2>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/08/mkdocs-mit-docker/mkdocs-with-docker-01-dockerfile.png" alt="Dockerfile"/> &lt;figcaption>
+&lt;p>
+Dockerfile im Quell-Verzeichnis
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Hier ist das Dockerfile:&lt;/p>
+&lt;div class="highlight">&lt;div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span style="color:#000080;font-weight:bold">FROM&lt;/span>&lt;span style="color:#00f"> python:3.9-alpine3.14&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>&lt;span style="color:#000080;font-weight:bold">LABEL&lt;/span> maintainer=&lt;span style="color:#00f">&amp;#34;cblte@envs.net&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>&lt;span style="color:#000080;font-weight:bold">LABEL&lt;/span> version=&lt;span style="color:#00f">&amp;#34;1.0&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>&lt;span style="color:#000080;font-weight:bold">LABEL&lt;/span> description=&lt;span style="color:#00f">&amp;#34;\
+&lt;/span>&lt;span style="color:#00f">This Dockerfile installs python3 and pip3 to\
+&lt;/span>&lt;span style="color:#00f">then install and run MkDocs with several extensions.&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>&lt;span style="color:#000080;font-weight:bold">RUN&lt;/span> pip install &lt;span style="color:#00f">\
+&lt;/span>&lt;span style="color:#00f">&lt;/span> mkdocs &lt;span style="color:#00f">\
+&lt;/span>&lt;span style="color:#00f">&lt;/span> mkdocs-material &lt;span style="color:#00f">\
+&lt;/span>&lt;span style="color:#00f">&lt;/span> pymdown-extensions&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>So einfach ist das. Wir verwenden das python-Basisimage in der alpine Version welches ca. 100 MB groß ist. Im Image installieren wir dann &lt;code>mkdocs&lt;/code>, das Designpaket &lt;code>mkdocs-material&lt;/code> und das erforderliche &lt;code>pymdown-extensions&lt;/code> Paket.&lt;/p>
+&lt;h2 id="image-erstellen">Image Erstellen&lt;/h2>
+&lt;p>Erstellt wird das Image mit dem folgenden Befehl:&lt;/p>
+&lt;p>&lt;code>docker build -t cblte/mkdocs:1.0 .&lt;/code>&lt;/p>
+&lt;p>Der Punkt am Ende ist wichtig, damit Docker das &lt;code>Dockerfile&lt;/code> findet. Mit dem Parameter &lt;code>-t cblte/mkdocs:1.0&lt;/code> legen wir den Tag fest mit auf das Image verwiesen werden kann. Hinter dem Doppelpunkt kann eine Versionsnummer angegeben werden.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/08/mkdocs-mit-docker/mkdocs-with-docker-02-docker-build.png" alt="Docker Image erstellen"/> &lt;figcaption>
+&lt;p>
+Docker Image erstellen
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;h2 id="docker-container-starten">Docker Container starten&lt;/h2>
+&lt;p>Nehmen wir an, die Dateien für die Dokumentation liegen im Verzeichnis &lt;code>$HOME/data/mkdocs-src&lt;/code>. Auf diesen Ordner soll von dem Docker-Container aus zugegriffen werden können. Außerdem möchte ich die Dokumentation vom Container aus über MkDocs bereitstellen und vom Host aus auf dem Entwicklungs-Server zugreifen.&lt;/p>
+&lt;p>Folgende Parameter müssen wir verwenden:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-it&lt;/code>: interaktiver modus&lt;/li>
+&lt;li>&lt;code>--rm&lt;/code>: nach dem Beenden container löschen&lt;/li>
+&lt;li>&lt;code>-p 8888:8000&lt;/code>: den Port 8000 aus dem Container auf dem Host unter Port 8888 verfügbar stellen&lt;/li>
+&lt;li>&lt;code>-v '$HOME/data/mkdocs-src':/src&lt;/code>: stelle das lokale Verzeichnis im Container im Verzeichnis &lt;code>/src&lt;/code> zur Verfügung&lt;/li>
+&lt;li>&lt;code>cblte/mkdocs:1.0&lt;/code>: das Image welches wir für den Container verwenden wollen&lt;/li>
+&lt;li>&lt;code>/bin/sh&lt;/code>: den Befehl den wir ausführen wollen&lt;/li>
+&lt;/ul>
+&lt;p>Den Container starten wir mit folgendem Befehl:&lt;/p>
+&lt;div class="highlight">&lt;div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Shell" data-lang="Shell">docker run -it --rm &lt;span style="color:#00f">\
+&lt;/span>&lt;span style="color:#00f">&lt;/span> -p 8888:8000 &lt;span style="color:#00f">\
+&lt;/span>&lt;span style="color:#00f">&lt;/span> -v $HOME/data/mkdocs-src:/src &lt;span style="color:#00f">\
+&lt;/span>&lt;span style="color:#00f">&lt;/span> cblte/mkdocs:1.0 /bin/sh
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Nachdem der Container gestartet ist, wechseln wir mit &lt;code>cd /src&lt;/code> in das verbundene Verzeichnis und erstellen mit &lt;code>mkdocs new .&lt;/code> ein neues Projekt.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/08/mkdocs-mit-docker/mkdocs-with-docker-03-run-container-and-commands.png" alt="Run Docker Container from Image"/> &lt;figcaption>
+&lt;p>
+Docker Container vom Image starten
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Dadurch das wir das lokale Verzeichnis mit dem Container verbunden haben, können wir auf dem Host bequeme daran arbeiten.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/08/mkdocs-mit-docker/mkdocs-with-docker-04-files-on-host.png" alt="Dateien wurden im Verzeichnis auf dem Host erstellt."/> &lt;figcaption>
+&lt;p>
+Dateien wurden im Verzeichnis auf dem Host erstellt.
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;h2 id="mkdocs-server-starten">MkDocs Server starten&lt;/h2>
+&lt;p>Den MkDocs Entwicklungsserver starten wir mit folgendem Befehl:&lt;/p>
+&lt;p>&lt;code>mkdocs server --liveReload --dev-addr 0.0.0.0:8000&lt;/code>&lt;/p>
+&lt;p>Da sich MkDocs standardmäßig an 127.0.0.1 bindet, müssen wir den Parameter &lt;code>--dev-addr&lt;/code> verwenden, um auf den Entwicklungsserver vom Host aus zuzugreifen.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/08/mkdocs-mit-docker/mkdocs-with-docker-05-run-dev-server.png" alt="Entwicklungsserver von MkDocs starten"/> &lt;figcaption>
+&lt;p>
+Entwicklungsserver von MkDocs starten
+&lt;/p>
+&lt;/figcaption>&lt;/figure>
+&lt;p>Auf dem Host-Rechner kann unter &lt;code>http://localhost:8888&lt;/code> auf den die Dokumentation zugregriffen werden.&lt;/p>
+&lt;figure>
+&lt;img src="https://cblte.github.io/2021/08/mkdocs-mit-docker/mkdocs-with-docker-06-website-viewed-on-host.png" alt="MkDocs Webseite auf dem Host aufgerufen"/> &lt;figcaption>
+&lt;p>
+MkDocs Webseite auf dem Host aufgerufen
+&lt;/p>
+&lt;/figcaption>&lt;/figure></description></item><item><title>Was Bisher Geschah – Woche 21-30</title><link>https://cblte.github.io/2021/08/was-bisher-geschah-woche-21-30/</link><pubDate>Sun, 01 Aug 2021 14:09:03 +0200</pubDate><guid>https://cblte.github.io/2021/08/was-bisher-geschah-woche-21-30/</guid><description>&lt;figure>
 &lt;img src="https://cblte.github.io/2021/08/was-bisher-geschah-woche-21-30/sonntagsfruehstueck.jpg" alt="Sonntagsfrühstück"/> &lt;figcaption>
 &lt;p>
 Sonntagsfrühstück
